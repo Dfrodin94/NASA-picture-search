@@ -1,11 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
 import "./HomeView.css";
+import {DatesContext} from "../../shared/provider /DatesProvider";
+
 
 // TODO styla appen, gör den responsiv och fin
 
 export function HomeView() {
 
+    const [savedDates, setSavedDates] = useContext(DatesContext);
     const [date, setDate] = useState("");
     const [item, setItem] = useState({});
     const [submit, setSubmit] = useState(false);
@@ -14,7 +17,6 @@ export function HomeView() {
 
         const api = "Iq9MemSuUlX8W6T4TKpGPp2hzFEIHOcPdmc03OuJ";
         const url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`;
-        // fgfgf
 
         axios.get(url)
             .then(function (response) {
@@ -47,7 +49,15 @@ export function HomeView() {
                 <input type={"date"} onChange={handleChange} value={date}/>
                 <button onClick={submitDate}> Submit</button>
             </form>
-                <button> Save date</button>
+                <button onClick={(event) => {
+
+                    const spacePicture = {date: item.date, title: item.title};
+
+                    setSavedDates(prevDates => {
+                        return [...prevDates, spacePicture]
+                    });
+
+                }}> Save date</button>
 
             {/*//TODO Gör data-visare till egen komponent */}
             <div>
