@@ -1,0 +1,17 @@
+.post__wrapper {
+    border-radius: 10px;
+    background-color: lavender;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: grid;
+}
+
+.post__wrapper h2 {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.post__wrapper p {
+    margin: 0.5rem 2rem;
+}

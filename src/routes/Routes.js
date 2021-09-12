@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Switch, Route, useLocation} from "react-router-dom";
 import {HomeView} from "../view/homeview/HomeView";
-import{OtherView} from "../view/otherview/OtherView";
+import{SavedPostsView} from "../view/savedpostsview/SavedPostsView";
 import RoutingPath from "./RoutingPath";
 
 
@@ -12,7 +12,7 @@ export const Routes = ({children}) => {
             {children}
             <Switch>
                 <Route exact path={RoutingPath.homeView} component={HomeView}/>
-                <Route exact path = {RoutingPath.otherView} component={OtherView}/>
+                <Route exact path = {RoutingPath.otherView} component={SavedPostsView}/>
                 <Route path={"*"} component={NoMatch}/>
             </Switch>
         </BrowserRouter>

@@ -9,13 +9,38 @@ export const NavDesktop = () => {
     const [savedDates, setSavedDates] = useContext(DatesContext);
 
     return (
+        <>
+            <nav className="navbar--desktop">
 
-        <nav>
+                <span className="navbar__logo--desktop"> 👽 </span>
 
+                <ul className="navbar__list--desktop">
+                    <li>
+                        <button className="navbar__button">
+                            About
+                        </button>
+                    </li>
+                    <li>
 
-            <span onClick={() => history.push(RoutingPath.homeView)}> Home </span>
-            <span onClick = {() => history.push(RoutingPath.otherView)}> Other </span>
-        </nav>
+                        <button className="navbar__button"
+                            onClick={() => history.push(RoutingPath.homeView)}>
+                            Home
+                        </button>
+                    </li>
+                    <li>
+                        <button className="navbar__button"
+                            onClick={() => history.push(RoutingPath.otherView)}>
+                            Saved posts
+                        </button>
+                    </li>
+
+                </ul>
+                <span className={"navbar__login--desktop"}>Sign in</span>
+
+            </nav>
+
+            <div className="navbar__line"></div>
+        </>
     )
 
 }

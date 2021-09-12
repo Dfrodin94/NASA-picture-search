@@ -1,3 +1,48 @@
-main {
-    margin: 5% 20%;
+:root {
+    --margin-text: 2rem;
+}
+
+.home__wrapper {
+    padding: 5% 20%;
+    background-color: #1E3163;
+}
+
+.item__line{
+    margin-top: 1em;
+    margin-bottom: 1.7em ;
+}
+
+.button__container {
+    width: 152px;
+    padding-top: 3px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.item__wrapper{
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: lavender;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: grid;
+}
+
+.item__wrapper h1{
+    margin-left: var(--margin-text);
+    margin-right: var(--margin-text);
+}
+
+.item__paragraph-main {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: var(--margin-text);
+    margin-right: var(--margin-text);
+}
+
+.item__wrapper p{
+    margin-left: var(--margin-text);
+    margin-right: var(--margin-text);
+
 }

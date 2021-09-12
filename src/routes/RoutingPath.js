@@ -1,5 +1,5 @@
 const homeView = "/";
-const otherView = "/other"
+const otherView = "/saved"
 
 export default {
     homeView,
