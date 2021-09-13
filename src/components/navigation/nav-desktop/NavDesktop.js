@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
 import {useHistory} from "react-router";
 import RoutingPath from "../../../routes/RoutingPath";
-import {DatesContext} from "../../../shared/provider /DatesProvider";
+import {SavedPostsContext} from "../../../shared/provider /SavedPostsProvider";
 import "./NavDesktop.css";
 
 export const NavDesktop = () => {
     const history = useHistory();
-    const [savedDates, setSavedDates] = useContext(DatesContext);
+    const [savedDates, setSavedDates] = useContext(SavedPostsContext);
 
     return (
         <>

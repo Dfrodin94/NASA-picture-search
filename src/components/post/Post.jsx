@@ -6,7 +6,7 @@ export function Post(props) {
         <section className="post__wrapper">
             <h2>{props.title} </h2>
             <hr className="item__line"/>
-            <div className="image__wrapper">
+            <div className="post-image__wrapper">
                 <img className="picture" src={props.img} alt=""/>
             </div>
             <p>©: {props.copyright}</p>

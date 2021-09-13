@@ -2,12 +2,26 @@
     padding-left: 20%;
     padding-right: 20%;
     background-color: #1E3163;
+    display: grid;
+    place-items: center;
+}
+
+.posts-button__wrapper{
+    width: 250px;
+    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .saved-items__wrapper {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(1, 1fr);
+
+}
+
+.saved-items-button{
 
 }
 

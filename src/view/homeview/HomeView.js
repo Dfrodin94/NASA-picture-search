@@ -1,14 +1,14 @@
 import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
-import {DatesContext} from "../../shared/provider /DatesProvider";
+import {SavedPostsContext} from "../../shared/provider /SavedPostsProvider";
 import {Button} from "@material-ui/core";
 import "./HomeView.css";
 
 export function HomeView() {
 
-    const [savedPosts, setSavedPosts] = useContext(DatesContext);
+    const [savedPosts, setSavedPosts] = useContext(SavedPostsContext);
     const [date, setDate] = useState("");
-    const [item, setItem] = useState({});
+    const [serverResponse, setServerResponse] = useState({});
     const [trigger, setTrigger] = useState(false);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ export function HomeView() {
         axios.get(url)
             //TODO loading bar while fetching
             .then(function (response) {
-                setItem(response.data);
+                setServerResponse(response.data);
             })
             .catch(function (error) {
                 console.log(error, "failed to fetch data");
@@ -42,15 +42,16 @@ export function HomeView() {
     function savePost(event) {
         const currentPost =
             {
-                date: item.date,
-                title: item.title,
-                picture: item.url,
-                copyright: item.copyright
+                date: serverResponse.date,
+                title: serverResponse.title,
+                picture: serverResponse.url,
+                copyright: serverResponse.copyright
             };
 
         setSavedPosts(prevPosts => {
             return [...prevPosts, currentPost]
         });
+        console.log(savedPosts);
         event.preventDefault();
     }
 
@@ -58,7 +59,7 @@ export function HomeView() {
         <>
             <main className="home__wrapper">
                 <form>
-{/*
+                    {/*
                     //TODO min-datum och max-datum
 */}
                     <input type={"date"} onChange={handleChange} value={date}/>
@@ -81,12 +82,14 @@ export function HomeView() {
                 </div>
 
                 <div className="item__wrapper">
-                    <h1>{item.title}</h1>
+                    <h1>{serverResponse.title}</h1>
                     <hr className="item__line"/>
-                    <img className="picture" src={item.url} alt=""/>
-                    <p className="item__paragraph-main">{item.explanation}</p>
-                    <p>Copyright: {item.copyright}</p>
-                    <p>{item.date}</p>
+                    <a href={serverResponse.url} target="_blank">
+                        <img className="picture" src={serverResponse.url} alt=""/>
+                    </a>
+                    <p className="item__paragraph-main">{serverResponse.explanation}</p>
+                    <p>Copyright: {serverResponse.copyright}</p>
+                    <p>{serverResponse.date}</p>
                     {/*// TODO om bild inte finns förmodligen switch på media_type*/}
                 </div>
             </main>

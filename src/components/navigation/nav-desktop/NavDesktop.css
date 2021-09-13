@@ -47,6 +47,7 @@
     border-color: #1E3163;
     border-width: 0;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .navbar__button:hover {
