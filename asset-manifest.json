@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/NSA-picture-serach/static/css/main.9cdf6f82.chunk.css",
+    "main.js": "/NSA-picture-serach/static/js/main.128e68b5.chunk.js",
+    "main.js.map": "/NSA-picture-serach/static/js/main.128e68b5.chunk.js.map",
+    "runtime-main.js": "/NSA-picture-serach/static/js/runtime-main.1cd4ab20.js",
+    "runtime-main.js.map": "/NSA-picture-serach/static/js/runtime-main.1cd4ab20.js.map",
+    "static/js/2.45f0e6c7.chunk.js": "/NSA-picture-serach/static/js/2.45f0e6c7.chunk.js",
+    "static/js/2.45f0e6c7.chunk.js.map": "/NSA-picture-serach/static/js/2.45f0e6c7.chunk.js.map",
+    "index.html": "/NSA-picture-serach/index.html",
+    "static/css/main.9cdf6f82.chunk.css.map": "/NSA-picture-serach/static/css/main.9cdf6f82.chunk.css.map",
+    "static/js/2.45f0e6c7.chunk.js.LICENSE.txt": "/NSA-picture-serach/static/js/2.45f0e6c7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cd4ab20.js",
+    "static/js/2.45f0e6c7.chunk.js",
+    "static/css/main.9cdf6f82.chunk.css",
+    "static/js/main.128e68b5.chunk.js"
+  ]
+}
