@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/NSA-picture-serach/static/css/main.9cdf6f82.chunk.css",
-    "main.js": "/NSA-picture-serach/static/js/main.4d984b04.chunk.js",
-    "main.js.map": "/NSA-picture-serach/static/js/main.4d984b04.chunk.js.map",
-    "runtime-main.js": "/NSA-picture-serach/static/js/runtime-main.1cd4ab20.js",
-    "runtime-main.js.map": "/NSA-picture-serach/static/js/runtime-main.1cd4ab20.js.map",
-    "static/js/2.45f0e6c7.chunk.js": "/NSA-picture-serach/static/js/2.45f0e6c7.chunk.js",
-    "static/js/2.45f0e6c7.chunk.js.map": "/NSA-picture-serach/static/js/2.45f0e6c7.chunk.js.map",
-    "index.html": "/NSA-picture-serach/index.html",
-    "static/css/main.9cdf6f82.chunk.css.map": "/NSA-picture-serach/static/css/main.9cdf6f82.chunk.css.map",
-    "static/js/2.45f0e6c7.chunk.js.LICENSE.txt": "/NSA-picture-serach/static/js/2.45f0e6c7.chunk.js.LICENSE.txt"
+    "main.css": "/NASA-picture-serach/static/css/main.74ef383d.chunk.css",
+    "main.js": "/NASA-picture-serach/static/js/main.c52c9258.chunk.js",
+    "main.js.map": "/NASA-picture-serach/static/js/main.c52c9258.chunk.js.map",
+    "runtime-main.js": "/NASA-picture-serach/static/js/runtime-main.775c7cd6.js",
+    "runtime-main.js.map": "/NASA-picture-serach/static/js/runtime-main.775c7cd6.js.map",
+    "static/js/2.6000324c.chunk.js": "/NASA-picture-serach/static/js/2.6000324c.chunk.js",
+    "static/js/2.6000324c.chunk.js.map": "/NASA-picture-serach/static/js/2.6000324c.chunk.js.map",
+    "index.html": "/NASA-picture-serach/index.html",
+    "static/css/main.74ef383d.chunk.css.map": "/NASA-picture-serach/static/css/main.74ef383d.chunk.css.map",
+    "static/js/2.6000324c.chunk.js.LICENSE.txt": "/NASA-picture-serach/static/js/2.6000324c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1cd4ab20.js",
-    "static/js/2.45f0e6c7.chunk.js",
-    "static/css/main.9cdf6f82.chunk.css",
-    "static/js/main.4d984b04.chunk.js"
+    "static/js/runtime-main.775c7cd6.js",
+    "static/js/2.6000324c.chunk.js",
+    "static/css/main.74ef383d.chunk.css",
+    "static/js/main.c52c9258.chunk.js"
   ]
 }
