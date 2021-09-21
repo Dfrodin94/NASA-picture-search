@@ -16,7 +16,8 @@ export const NavDesktop = () => {
 
                 <ul className="navbar__list--desktop">
                     <li>
-                        <button className="navbar__button">
+                        <button className="navbar__button"
+                                onClick={() => history.push(RoutingPath.aboutView)}>
                             About
                         </button>
                     </li>

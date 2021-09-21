@@ -10,11 +10,45 @@ export function SavedPostsView() {
     const [postShower, setPostShower] = useState(false);
     const [savedPosts, setSavedPosts] = useContext(SavedPostsContext);
 
+    function showSavedPosts() {
+        return (
+            <>
+                <h1 className="saved-posts-h1">{savedPosts.length === 0 ? "Ooobs! No saved posts, please save a post." : null} </h1>
+                {
+                    savedPosts.map((dateItem, index) => {
+                        return (
+                            <Post
+                                title={dateItem.title}
+                                img={dateItem.picture}
+                                copyright={dateItem.copyright}
+                            />
+                        )
+                    })
+                }
+            </>
+        )
+    }
+
+    function showEditorsChoice() {
+        return (
+            <>
+                {
+                    editorsChoiceData.map((dateItem, index) => {
+                        return (
+                            <Post
+                                title={dateItem.title}
+                                img={dateItem.picture}
+                                copyright={dateItem.copyright}
+                            />
+                        )
+                    })
+                }
+            </>
+        )
+    }
+
     return (
-
         <main className="posts__wrapper">
-
-            {/* //TODO fixa knapparna och logiken bakom dem*/}
             <div className="posts-button__wrapper">
                 <Button variant="contained" color="primary" size="small"
                         classes={{label: "saved-items-button"}}
@@ -28,36 +62,10 @@ export function SavedPostsView() {
                             setPostShower(false)
                         }}>
                     Saved posts </Button>
+
             </div>
             <div className={"saved-items__wrapper"}>
-                {
-                    postShower ?
-
-                        (editorsChoiceData.map((dateItem, index) => {
-                            return (
-                                <Post
-                                    title={dateItem.title}
-                                    img={dateItem.picture}
-                                    copyright={dateItem.copyright}
-                                />
-                            )
-                        }))
-                        :
-/*
-                        //TODO if savedPosts == null visa något på skärmen
-*/
-
-                        (savedPosts.map((dateItem, index) => {
-                            return (
-                                <Post
-                                    title={dateItem.title}
-                                    img={dateItem.picture}
-                                    copyright={dateItem.copyright}
-                                />
-                            )
-                        }))
-                }
-
+                {postShower ? showEditorsChoice() : showSavedPosts()}
             </div>
         </main>
     );

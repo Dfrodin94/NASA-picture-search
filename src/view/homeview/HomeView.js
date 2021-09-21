@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
 import {SavedPostsContext} from "../../shared/provider /SavedPostsProvider";
-import {Button} from "@material-ui/core";
+import {Button, LinearProgress} from "@material-ui/core";
 import "./HomeView.css";
 
 export function HomeView() {
@@ -10,21 +10,29 @@ export function HomeView() {
     const [date, setDate] = useState("");
     const [serverResponse, setServerResponse] = useState({});
     const [trigger, setTrigger] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-
+    async function getDataFunction() {
         // TODO env variable on API-key
         const api = "Iq9MemSuUlX8W6T4TKpGPp2hzFEIHOcPdmc03OuJ";
         const url = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=${api}`;
 
-        axios.get(url)
-            //TODO loading bar while fetching
-            .then(function (response) {
-                setServerResponse(response.data);
-            })
-            .catch(function (error) {
-                console.log(error, "failed to fetch data");
-            });
+        try {
+            const data = await axios
+                .get(url)
+                //TODO loading bar while fetching
+                .then(function (response) {
+                    setServerResponse(response.data);
+                });
+            //Hade kunnat struna i try catch och bara andvänt axios catch, om jag förstått det rätt`
+            setLoading(true);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    useEffect(() => {
+        getDataFunction();
     }, [trigger])
 
     function handleChange(event) {
@@ -59,11 +67,8 @@ export function HomeView() {
         <>
             <main className="home__wrapper">
                 <form>
-                    {/*
-                    //TODO min-datum och max-datum
-*/}
+                    {/*//TODO min-datum och max-datum*/}
                     <input type={"date"} onChange={handleChange} value={date}/>
-
                 </form>
                 <div className="button__container">
                     <Button
@@ -82,6 +87,7 @@ export function HomeView() {
                 </div>
 
                 <div className="item__wrapper">
+                    {loading ? (null) : (<LinearProgress/>)}
                     <h1>{serverResponse.title}</h1>
                     <hr className="item__line"/>
                     <a href={serverResponse.url} target="_blank">
