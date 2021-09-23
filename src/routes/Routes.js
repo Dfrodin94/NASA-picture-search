@@ -10,7 +10,7 @@ import RoutingPath from "./RoutingPath";
 export const Routes = ({children}) => {
     return (
 
-        <BrowserRouter basename="/NASA-picture-serach">
+        <BrowserRouter basename="/NASA-picture-search">
             {children}
             <Switch>
                 <Route exact path={RoutingPath.homeView} component={HomeView}/>
